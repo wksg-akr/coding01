@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* ----------------------------------------
+
+PC layout
+
+---------------------------------------- */
+/* ----------------------------------------
+base
+---------------------------------------- */
+body {
+  color: 333;
+  font-family: "游ゴシック", "游ゴシック体", "Yu Gothic", sans-serif;
+}
+
+a,
+a img {
+  transition: opacity .25s;
+}
+
+a,
+a img:hover {
+  opacity: .7;
+}
+
+img {
+  max-width: 100%;
+  pointer-events: none;
+}
+
+/*parts
+---------------------------------------- */
+.cmn-txt {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 3.2;
+}
+
+.sec-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/*flex parts
+---------------------------------------- */
+.fle {
+  display: flex;
+}
+
+.fle-between {
+  justify-content: space-between;
+}
+
+.fle-align-center {
+  align-items: center;
+}
+
+/*heading
+---------------------------------------- */
+.head-type02 {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+
+/* gnav
+---------------------------------------- */
+
+/* sp-menu-btn
+---------------------------------------- */
+#sp-menu-btn {
+  display: block;      
+  width: 61px;      
+  height: 13px;      
+  position: relative;      
+  z-index: 3;
+  border:none; 
+}
+
+#sp-menu-btn span {      
+  width: 20px;      
+  height: 1px;        
+  display: block;      
+  position: absolute;      
+  left: 50%;      
+  transform: translateX(-50%);      
+  background-color: #fff;    
+}    
+#sp-menu-btn span:nth-of-type(1) {   
+  top: 0;
+}
+#sp-menu-btn span:nth-of-type(2) {    
+  top: 5px;
+  transform: translate(-50%,-50%);
+}
+#sp-menu-btn span:nth-of-type(3) {
+  bottom: 10px;
+}
+
+
+/* ----------------------------------------
+header
+---------------------------------------- */
+/*headline
+---------------------------------------- */
+.headline {
+  padding: 30px 4.17%; /* Xdの余白 40px / 1440px */
+}
