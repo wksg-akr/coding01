@@ -3,53 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【SAMPLE】DIGSMILE.inc</title>
+		<title>【SAMPLE】DIGSMILE.inc</title>
+		
+		<!-- google font -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
     <!-- css -->
-    <link rel="stylesheet" href="https://wksg-akr.github.io/coding01/css/reset.css">
-    <link rel="stylesheet" href="https://wksg-akr.github.io/coding01/css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/style.css">
+		
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript"> // gnav
+			$(function () {
+				$('#sp-menu-btn').click(function () {
+					$(this).toggleClass('active');
+					if ($(this).hasClass('active')) {
+						$('.nav-wrap,#gnav').addClass('active'), //クラスを付与
+						$('body').addClass('noscroll');
+					} else {
+						$('.nav-wrap,#gnav').removeClass('active'), //クラスを外す
+						$('body').removeClass('noscroll'); 
+					}
+				});
+				$('#gnav a').on('click', function (event) {// ページ内リンクを押すとメニューが消える
+					$('#sp-menu-btn').trigger('click');
+				});
+			});
+		</script>
+		<script>	
+			$(function(){   
+				$(window).scroll(function(){
+					// header以降のgnav黒色
+					if ($(window).scrollTop() > $('.sec01').offset().top && $(window).scrollTop() < $('.se04').offset().top){
+						$("#sp-menu-btn::after").css("color", "#000"),
+						$('#sp-menu-btn span').css("background", "#000");
+					}
+				});
+			}); 
+		</script>
 </head>
 <body>
 	<header id="header">
-		<div class="h-bg">beforeで画像おく
-			<div class="headline fle fle-between fle-align-center">
-				<div class="h-logo">
-					<img src="https://wksg-akr.github.io/coding01/img/h-logo.png" alt="DIGSMILE.inc">
+		<div class="h-bg">
+			<div class="vis">
+				<div class="headline fle fle-between fle-align-center">
+					<a href="./" class="h-logo">
+						<img src="./img/h-logo.png" alt="DIGSMILE.inc">
+					</a>
+					<div id="sp-menu-btn">
+						<span class="top"></span>
+						<span class="middle"></span>
+						<span class="bottom"></span>
+					</div>
 				</div>
-				<div id="sp-menu-btn">
-					<span></span>
-					<span></span>
-					<span></span>
+				<div class="nav-wrap">
+					<nav id="gnav">
+						<ul class="g-ul">
+							<li class="g-li nav-logo">
+								<a href="./">
+									<img src="./img/nav-logo.png" alt="DIGSMILE.inc">
+								</a>
+							</li>
+							<li class="g-li">
+								<a href="./about" class="g-link">ABOUT US</a>
+							</li>
+							<li class="g-li">
+								<a href="./works" class="g-link">WORKS</a>
+							</li>
+							<li class="g-li">
+								<a href="./culture" class="g-link">CULTURE</a>
+							</li>
+							<li class="g-li">
+								<a href="./topics" class="g-link">TOPICS</a>
+							</li>
+							<li class="g-li">
+								<a href="./contact" class="g-link">CONTACT</a>
+							</li>
+						</ul>
+					</nav>
 				</div>
-				<nav id="gnav">
-					<ul class="gnav-ul">
-						<li class="g-li nav-logo">
-							<a href="./">
-								<img src="https://wksg-akr.github.io/coding01/img/nav-logo.png" alt="DIGSMILE.inc">
-							</a>
-						</li>
-						<li class="g-li">
-							<a href="./about" class="g-link">ABOUT US</a>
-						</li>
-						<li class="g-li">
-							<a href="./works" class="g-link">WORKS</a>
-						</li>
-						<li class="g-li">
-							<a href="./culture" class="g-link">CULTURE</a>
-						</li>
-						<li class="g-li">
-							<a href="./topics" class="g-link">TOPICS</a>
-						</li>
-						<li class="g-li">
-							<a href="./contact" class="g-link">CONTACT</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			<div class="catch-wrap">
-				<p class="catch-txt">デザインで人を笑顔にする会社</p>
-				<p class="catch-txt">DIGSMILE.inc</p>
-				<img src="https://wksg-akr.github.io/coding01/img/h-catch.png" alt="DESIGN FOR SMILE.">
+				<div class="catch-wrap">
+					<p class="catch-txt">デザインで人を笑顔にする会社</p>
+					<p class="catch-txt" class="mont">DIGSMILE.inc</p>
+					<img src="./img/h-catch.png" alt="DESIGN FOR SMILE.">
+				</div>
 			</div>
 		</div>
 	</header>
@@ -58,12 +96,12 @@
 		<section id="about" class="sec01">
 			<div class="sec-bg">
 				<div class="sec-inner">
-					<div class="sec-bg-box">
-						<div class="contents-box">
+					<div class="sec-bg-box fle fle-align-center">
+						<div class="contents-box fle fle-column">
 							<h2 class="head-type02">ABOUT US</h2>
 							<div class="content-txt">
 								<p class="cmn-txt">DIGSMILEは、デザインで人を笑顔にする会社。<br>
-									なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
+									なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。<br>
 									DIGSMILEの社名にはそんな想いが込められています。</p>
 							</div>
 							<div class="btn-wrap">
@@ -78,10 +116,13 @@
 		</section>
 		<section class="sec02">
 			<div class="sec-bg">
-				<div class="sec-inner fre fre-between">
+				<div class="sec-inner fle fle-start">
 					<div class="contents-box">
 						<h2 class="head-type02">WORKS</h2>
-						<div class="content-txt">before:paddingで画像サイズとる
+						<figure>
+							<img src="./img/works.jpg" alt="WORKS" class="sec02-img">
+						</figure>
+						<div class="content-txt">
 							<p class="cmn-txt">DIGSMILEの制作実績を紹介します。</p>
 							<div class="btn-wrap">
 								<a href="./about" class="cmn-btn">
@@ -92,7 +133,10 @@
 					</div>
 					<div class="contents-box">
 						<h2 class="head-type02">CULTURE</h2>
-						<div class="content-txt">before:paddingで画像サイズとる
+						<figure>
+							<img src="./img/culture.jpg" alt="CULTURE" class="sec02-img">
+						</figure>
+						<div class="content-txt">
 							<p class="cmn-txt">DIGSMILEの社内文化について紹介します。</p>
 							<div class="btn-wrap">
 								<a href="./about" class="cmn-btn">
@@ -110,15 +154,15 @@
 					<h2 class="head-type02">LATEST TOPICS</h2>
 					<ul class="contents-wrap">
 						<li class="contents-box">
-							<p class="date-txt">2020.02.01</p>
+							<p class="date-txt mont">2020.02.01</p>
 							<p class="topics-ttl">イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</p>
 						</li>
 						<li class="contents-box">
-							<p class="date-txt">2020.01.18</p>
+							<p class="date-txt mont">2020.01.18</p>
 							<p class="topics-ttl">プレスリリースのお知らせ DIGGIN’ RECORDS</p>
 						</li>
 						<li class="contents-box">
-							<p class="date-txt">2020.01.01</p>
+							<p class="date-txt mont">2020.01.01</p>
 							<p class="topics-ttl">新年明けましておめでとうございます</p>
 						</li>
 					</ul>
@@ -146,14 +190,18 @@
 							</div>
 						</div>
 						<div class="contents-box">
-							<img src="https://wksg-akr.github.io/coding01/img/contact.jpg" alt="CONTACT">
+							<img src="./img/contact.jpg" alt="CONTACT">
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</section>
 	</main>
 	<!-----------------------↑ MAIN CONTENT ↑----------------------->
+	<footer id="footer">
+		<div class="copyright fle fle-center fle-align-center">
+			<small class="mont">©2018 DIGSMILE INC.</small>
+		</div>
+	</footer>
 </body>
 </html>
