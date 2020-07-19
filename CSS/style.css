@@ -13,6 +13,10 @@ body {
   font-family: "游ゴシック", "游ゴシック体", "Yu Gothic", sans-serif;
 }
 
+a {
+  color: #fff;
+}
+
 a,
 a img {
   transition: opacity .25s;
@@ -70,6 +74,7 @@ img {
 /* gnav
 ---------------------------------------- */
 
+
 /* sp-menu-btn
 ---------------------------------------- */
 #sp-menu-btn {
@@ -105,8 +110,22 @@ img {
 /* ----------------------------------------
 header
 ---------------------------------------- */
-/*headline
+/* headline
 ---------------------------------------- */
 .headline {
   padding: 30px 4.17%; /* Xdの余白 40px / 1440px */
+}
+
+/* main-vis
+---------------------------------------- */
+#header .h-bg {
+  width: 100%;
+  height: 100%;
+  max-height: 740px;
+  background: linear-gradient(90deg,#fff 0%,#fff 50%,#000 50%,#000 100%);
+}
+
+#header .h-bg::before {
+  content: '';
+  background: url(https://wksg-akr.github.io/coding01/img/main-vis.jpg)no-repeat 0% 0%/contain;
 }
